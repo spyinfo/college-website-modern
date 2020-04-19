@@ -1,0 +1,1541 @@
+/*==========================================*/
+/*============= СПЕЦИФИКАЦИЯ ==============*/
+/*==========================================*/
+@import '~bootstrap/scss/bootstrap';
+@import '~slick-carousel/slick/slick';
+@import '~slick-carousel/slick/slick-theme';
+@import 'mixins';
+
+
+$primary: #14213D; // основной цвет шрифтов на сайте
+
+body,
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+/* ScroolBar */
+
+::-webkit-scrollbar {
+    width: 11px;
+    /* for vertical scrollbars */
+    height: 11px;
+    /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(78, 53, 53, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(2, 39, 48, 0.637);
+}
+
+/* End ScroolBar */
+
+* {
+    transition: background-color 400ms ease;
+}
+
+::selection {
+    background: rgb(59, 119, 138);
+}
+
+::-moz-selection {
+    background: rgb(59, 119, 138);
+}
+
+::-webkit-selection {
+    background: rgb(59, 119, 138);
+    color: #fff;
+}
+
+ul,
+li {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+
+a,
+a:hover,
+a:active,
+a:focus,
+button,
+button:hover,
+button:active,
+button:focus,
+input,
+input:focus,
+input:active,
+textarea:focus,
+textarea:active,
+select:focus,
+select:active {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    -moz-transition: all 0.3s ease;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+}
+
+.hypertext {
+    font-size: 1.2rem;
+    text-decoration-line: underline;
+    line-height: 19px;
+    color: #0067AC;
+}
+
+h1,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.4rem;
+    letter-spacing: 8px;
+}
+
+h2 {
+    font-family: 'Comfortaa', cursive;
+}
+
+h3 {
+    font-size: 1.95rem;
+}
+
+.line-separator {
+    width: 100%;
+    border: 5px solid #EDEDED;
+}
+
+.button-classic {
+    &:hover {
+        background: #FCA311;
+        color: #fff;
+    }
+
+    color: #FCA311;
+    border: 1px solid #FCA311;
+    padding: 13px 25px 17px 25px;
+}
+
+.stronger {
+    font-weight: 700;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.line {
+    width: 90%;
+    border: 1px solid #6F6B6B;
+    margin: 30px auto 28px auto;
+}
+
+/* DOTS */
+
+.my-dots {
+    position: absolute;
+    bottom: -45px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.my-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.my-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.my-dots li button:hover,
+.my-dots li button:focus {
+    outline: none;
+}
+
+.my-dots li button:hover:before,
+.my-dots li button:focus:before {
+    opacity: 0.75;
+}
+
+.my-dots li button:before {
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: url('/img/dots_active.svg');
+    text-align: center;
+    opacity: .25;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+.my-dots li.slick-active button:before {
+    opacity: 1;
+    color: black;
+}
+
+/* End DOTS */
+
+/*==========================================*/
+/*================ HEADER ==================*/
+/*==========================================*/
+
+.header {
+    padding: 43px 0;
+    color: $primary;
+
+
+    .telephone {
+        text-align: center;
+        font-size: 1.46rem;
+
+        &__text {
+            color: #FCA311;
+            display: block;
+        }
+    }
+
+    .menu {
+        font-family: 'Comfortaa', cursive;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.467rem;
+        margin-top: 57px;
+
+        li a {
+            color: $primary;
+            display: inline-block;
+            line-height: 1.4;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        li a:after {
+            background-color: #FCA311;
+            display: block;
+            content: "";
+            height: 2px;
+            width: 0%;
+            -webkit-transition: width .3s ease-in-out;
+            -moz--transition: width .3s ease-in-out;
+            transition: width .3s ease-in-out;
+        }
+
+        li a:hover:after,
+        li a:focus:after {
+            width: 100%;
+        }
+
+        &>li {
+            position: relative;
+        }
+
+        &>li>a {
+            color: #404040;
+
+            &:hover {
+                color: #D5B45B;
+            }
+        }
+    }
+
+    .submenu {
+        background: #EFEFEF;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 5;
+        width: 200px;
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: 0 0;
+        transition: .5s ease-in-out;
+    }
+
+    .submenu a {
+        color: white;
+        text-align: left;
+        padding: 12px 15px;
+        font-size: 0.868rem;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .submenu li:last-child a {
+        border-bottom: none;
+    }
+
+    .submenu li:first-child a {
+        padding-top: 24px;
+    }
+
+    .menu>li:hover .submenu {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+}
+
+.offer {
+    background: #83D6C4 url('/img/imagefon.png') no-repeat center center / cover;
+    color: #fff;
+    height: 517px;
+    padding-top: 70px;
+    position: relative;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__image {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        margin-left: -225px;
+    }
+}
+
+.info {
+    padding: 114px 0 0 0;
+    color: $primary;
+
+    &__text {
+        font-size: 1.467rem;
+        line-height: 40px;
+    }
+
+}
+
+.news {
+    color: $primary;
+
+    &__head {
+        font-family: 'Comfortaa', cursive;
+        font-size: 1.77rem;
+        margin-bottom: 28px;
+    }
+
+    &__item {
+        margin-top: 17px;
+    }
+
+    &__title {
+        font-size: 1.4rem;
+        line-height: 29px;
+    }
+
+    &__link {
+        color: $primary !important;
+
+        &:hover {
+            text-decoration-line: underline;
+        }
+    }
+
+    &__date {
+        color: #534F4F;
+        font-size: 1.067rem;
+        line-height: 22px;
+        margin-top: 7px;
+    }
+
+    &__all-news {
+        padding-top: 35px;
+    }
+}
+
+.gallery {
+    margin-top: 60px;
+    background: rgba($color: #969696, $alpha: 0.15);
+    padding: 35px 0 130px 0;
+
+    &__images {
+        margin-top: 40px;
+    }
+
+    .card-img-top-nav {
+        border: 2px solid rgba($color: #969696, $alpha: 0.35);
+    }
+}
+
+.carousel-nav {
+    border: 2px solid rgba($color: #969696, $alpha: 0.35);
+}
+
+.slick-dotted.slick-slider {
+    margin: 0;
+}
+
+/*==========================================*/
+/*================ FOOTER ==================*/
+/*==========================================*/
+.footer {
+    padding: 37px 0 32px 0;
+    font-size: 1.33rem;
+    background: #3D3D3D;
+
+    .contact-info {
+        line-height: 36px;
+
+        &__text {
+            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    .search-form {
+        display: inline;
+        background: #D1D1D1;
+        @include border-radius(29px);
+        padding: 13px 2px 14px 18px;
+
+        .search-field {
+            width: 250px;
+            background: none;
+            border: none;
+        }
+
+        ::placeholder {
+            font-size: 0.933rem;
+        }
+
+        .search-button {
+            @include border-radius(29px);
+            border: 0;
+            font-size: 0.9333rem;
+            padding: 17px 37px 13px 40px;
+            background: #FCA311;
+        }
+
+        input[type="text"] {
+            font-size: 1rem;
+            color: $primary;
+        }
+
+    }
+
+    .menu-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 105px;
+
+        a {
+            color: rgba(255, 255, 255, 0.8);
+
+            &:hover {
+                color: #FCA311;
+            }
+        }
+
+    }
+
+    .links {
+        display: flex;
+        justify-content: center;
+        margin-top: 46px;
+
+        li {
+            margin-right: 10px;
+        }
+    }
+
+    .college {
+        font-size: 1.9rem;
+        color: rgba(255, 255, 255, 0.72);
+    }
+}
+
+
+/*==========================================*/
+/*=============== КОНТАКТЫ" ================*/
+/*==========================================*/
+
+.contacts {
+    padding-top: 76px;
+    background: rgba(226, 226, 226, 0.41);
+
+    h2 {
+        font-size: 2.467rem;
+        margin-bottom: 97px;
+    }
+
+    &__contact {
+        margin-top: 42px;
+
+        &_first {
+            margin-top: 0;
+        }
+    }
+
+    &__title {
+        font-size: 1.9333rem;
+
+    }
+
+    &__description {
+        font-size: 1.533rem;
+    }
+
+    #contact-with-us {
+        margin-bottom: 52px;
+    }
+
+    .form {
+        &__field {
+            width: 100%;
+            margin-bottom: 5px;
+            margin-top: 20px;
+            @include border-radius(19px);
+            border: 1px solid #14213D;
+            padding: 11px 0 13px 25px;
+        }
+
+        &__button {
+            margin-bottom: 63px;
+            width: 100%;
+            @include border-radius(19px);
+            border: none;
+            background: #FCA311;
+            padding: 10px 12px;
+        }
+
+        .text-area {
+            max-height: 430px;
+            min-height: 125px;
+        }
+
+        .error {
+            border: 1px solid #e34a39;
+            font-size: 0.9rem;
+            padding-left: 18px;
+        }
+
+        label.error {
+            border: none;
+        }
+    }
+}
+
+
+/*==========================================*/
+/*======= АВТОРИЗАЦИЯ В АДМИН-ПАНЕЛЬ =======*/
+/*==========================================*/
+
+.auth {
+    font-size: 10px;
+    padding-top: 60px;
+
+    &__form {
+        background: rgba(174, 174, 174, 0.18);
+        @include border-radius(14px);
+        margin-top: 55px;
+        padding: 66px 0;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 2.67em;
+        margin-bottom: 55px;
+    }
+
+    label {
+        display: block;
+        font-size: 1.6em;
+    }
+
+    input {
+        width: 60%;
+        //height: 46px;
+        @include border-radius(28px);
+        background: #FFFFFF;
+        padding: 10px 10px 10px 20px;
+        border: 1px solid rgba(0, 0, 0, 0.33);
+        display: block;
+        margin: 0 auto 36px auto;
+    }
+
+    input[type='password'] {
+        font-size: 1.05rem;
+    }
+
+    input[type="text"] {
+        font-size: 1.6em;
+    }
+
+    button {
+        background: #FCA311;
+        @include border-radius(64px);
+        padding: 15px 60px 15px 60px;
+        border: none;
+        font-size: 1.6em;
+    }
+
+    .flash-login {
+        font-size: 1.3rem;
+        p {
+            margin: 0;
+        }
+    }
+}
+
+/*==========================================*/
+/*=========== РАСПИСАНИЕ ЗАНЯТИЙ ===========*/
+/*==========================================*/
+
+.schedule {
+    padding: 117px 0 73px 0;
+
+    &__title {
+        margin-bottom: 79px;
+    }
+
+    .calls {
+        &__title {
+            font-size: 1.67rem;
+            margin-bottom: 10px;
+
+            &_dinner {
+                margin-bottom: 30px;
+            }
+        }
+
+        &__text {
+            font-size: 1.333rem;
+
+            &_first {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+.main_schedule {
+    padding-bottom: 149px;
+
+    .yellow-color {
+        color: #FCA311;
+    }
+
+    &__description {
+        color: #14213D;
+        line-height: 20px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .coure_buttons {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            margin: 42px 0 90px 0;
+        }
+    }
+
+    .exams {
+        margin: 31px 0 93px 0;
+    }
+
+    .form-schedule {
+        margin-top: 33px;
+    }
+
+    .input_email {
+        @include border-radius(29px);
+        border: 1px solid #FCA311;
+        padding: 13px 0 14px 19px;
+        width: 236px;
+    }
+
+    select {
+        @include border-radius(29px);
+        border: 1px solid #FCA311;
+        background: #fff;
+        padding: 13px 15px 14px 17px;
+        width: 127px;
+        color: $primary;
+    }
+
+    ::placeholder {
+        color: rgba(108, 117, 125, 0.7);
+        font-size: 1rem;
+
+    }
+
+    .email_btn {
+        margin: 28px auto 0 auto;
+        width: 165px;
+        display: block;
+        background: none;
+        @include border-radius(29px);
+
+        &:hover {
+            background: #FCA311;
+        }
+    }
+
+    .flash {
+        p {
+            margin: 0;
+        }
+
+        margin-top: 25px;
+
+    }
+}
+
+/*==========================================*/
+/*================ НОВОСТИ =================*/
+/*==========================================*/
+
+.news-page {
+    background: rgba(240, 240, 240, 0.38);
+    padding: 42px 0 100px 0;
+
+    &__title {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 2.4rem;
+    }
+
+    &__pubdate {
+        font-size: 1rem;
+        color: $primary;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        text-align: justify;
+        margin-top: 36px;
+        line-height: 45px;
+
+        &:first-letter {
+            font-size: 2.4rem;
+        }
+    }
+
+    .gallery-news {
+        background: none !important;
+        margin-top: 85px;
+        padding: 0;
+    }
+
+}
+
+/*============== HAMBURGER MENU ===============*/
+
+.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.hamRotate.active {
+    transform: rotate(45deg);
+}
+
+.line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: $primary;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+.ham .top {
+    stroke-dasharray: 40 121;
+}
+
+.ham .bottom {
+    stroke-dasharray: 40 121;
+}
+
+.ham.active .top {
+    stroke-dashoffset: -68px;
+}
+
+.ham.active .bottom {
+    stroke-dashoffset: -68px;
+}
+
+/*============== END HAMBURGER MENU ===============*/
+
+
+
+
+/*==========================================*/
+/*============== ВСЕ НОВОСТИ ===============*/
+/*==========================================*/
+
+.all_news {
+    padding: 69px 0;
+    color: $primary;
+    background: rgba(240, 240, 240, 0.48);
+
+    &__title {
+        font-size: 2.8rem;
+        margin-bottom: 50px;
+    }
+
+    &__item {
+        margin-top: 50px;
+    }
+
+    &__heading {
+        font-size: 1.8rem;
+
+        a {
+            color: $primary;
+
+            &:hover {
+                border-bottom: 2px solid $primary;
+            }
+        }
+    }
+
+    &__pubdate {
+        font-size: 1.067rem;
+    }
+
+    &__separator {
+        margin-top: 30px;
+        border: 1px solid #D1D1D1;
+    }
+}
+
+.paginator {
+    margin-top: 20px;
+
+    &__link {
+        font-size: 1.1rem;
+        padding: 4px 10px 8px 10px;
+        margin-right: 15px;
+    }
+}
+
+.main_info {
+    padding: 47px 0 77px 0;
+    background: rgba(231, 231, 231, 0.29);
+    color: $primary;
+
+    a {
+        color: $primary;
+    }
+
+
+    &__title {
+        font-size: 2.46rem;
+    }
+
+    &__name {
+        font-size: 1.73rem;
+        margin-top: 89px;
+    }
+
+    &__description {
+        margin-top: 89px;
+
+    }
+
+    &__item {
+        font-size: 1.267rem;
+        margin-top: 35px;
+    }
+
+    &__founder {
+        font-size: 1.53rem;
+        font-weight: 700;
+        margin-top: 42px;
+    }
+
+    .separator {
+        border: 1px solid #D1D1D1;
+        width: 90%;
+        margin: 79px auto;
+    }
+
+    #leader {
+        font-size: 1.4rem;
+    }
+}
+
+
+/*==========================================*/
+/*=========== УЧЕБНЫЕ МАТЕРИАЛЫ=============*/
+/*==========================================*/
+
+
+.educ_materials {
+    padding: 123px 0 259px 0;
+    background: rgba(218, 218, 218, 0.23);
+
+    &__title {
+        font-size: 2.46rem;
+    }
+
+    &__instruction {
+        margin-top: 89px;
+        font-size: 1.6rem;
+    }
+
+    &__steps {
+        margin-top: 23px;
+        font-size: 1.4rem;
+
+        li {
+            margin-top: 10px;
+        }
+    }
+
+    #exams {
+        margin-top: 60px;
+    }
+
+    &__link {
+        margin-top: 23px;
+        font-size: 1.4rem;
+    }
+
+}
+
+
+/*==========================================*/
+/*============== РУКОВОДСТВО ===============*/
+/*==========================================*/
+
+.leaders {
+    padding: 62px 0 150px 0;
+    background: #F7F7F7;
+
+    a {
+        color: #3D3D3D;
+    }
+
+    h2 {
+        font-size: 2.467rem;
+    }
+
+    h3 {
+        font-family: 'Comfortaa', cursive;
+        font-size: 2.133rem;
+    }
+
+    &__title {
+        margin-bottom: 99px;
+    }
+
+    &__title_first {
+        margin: 132px 0 99px 0;
+    }
+
+    &__title_default {
+        margin-bottom: 99px;
+    }
+
+    &__title_departament {
+        margin-top: 125px;
+    }
+
+    &__address,
+    &__phone,
+    &__email {
+        font-size: 1.267rem;
+        margin-top: 22px;
+    }
+
+    &__name {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #3D3D3D;
+    }
+
+    .line {
+        margin: 70px auto 60px auto;
+    }
+
+
+}
+
+/*==========================================*/
+/*================ VACANT ==================*/
+/*==========================================*/
+
+.vacant {
+    background: rgba(231, 231, 231, 0.36);
+    padding: 97px 0 200px 0;
+    color: $primary;
+
+    ul,
+    li {
+        display: list-item;
+    }
+
+    &__table {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    &__pubdate {
+        font-size: 1.6rem;
+        margin-bottom: 40px;
+    }
+
+    #table__title {
+        text-align: center;
+        font-size: 1.4rem !important;
+        font-weight: 700;
+
+        td {
+            padding: 12px 0px;
+        }
+    }
+
+    .table__speciality {
+        text-align: left;
+        font-size: 1.28rem;
+        width: 605px;
+        padding-left: 5px
+    }
+
+    .table__info {
+        padding: 4px 0;
+    }
+
+    .table__course {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    &__description {
+        margin-top: 45px;
+        font-size: 1.4rem;
+    }
+
+    &__conditions {
+        font-size: 1.3rem;
+        padding: 24px 0 24px 10px;
+    }
+
+    &__additional {
+        margin: 20px 0;
+    }
+
+    &__more_info {
+        margin-top: 25px;
+        font-weight: 700;
+        font-size: 1.25rem;
+    }
+
+}
+
+
+/*==========================================*/
+/*=========== Спасибо за заявку ============*/
+/*==========================================*/
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, .56);
+    z-index: 100;
+    display: none;
+}
+
+.modal-consult {
+    background: #fca311;
+    width: 480px;
+    min-height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px 40px;
+    box-shadow: 0 0 0 6px rgba(153, 153, 153, .3);
+    border-radius: 10px;
+    color: #fff;
+
+    .overlay__close {
+        position: absolute;
+        top: 0;
+        right: -40px;
+        line-height: 1.8rem;
+        font-size: 2.8rem;
+        color: #fca311;
+        cursor: pointer;
+    }
+
+    .overlay__subtitle {
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+
+    .overlay__description {
+        margin-bottom: 15px;
+    }
+}
+
+
+/*==========================================*/
+/*=============== ДОКУМЕНТЫ ================*/
+/*==========================================*/
+
+.documents {
+    padding: 91px 0;
+
+    &__title {
+        font-size: 2.467rem;
+    }
+
+    &__subtitle {
+        font-size: 1.8rem;
+        margin: 91px 0 51px 0;
+    }
+
+    #document__titles {
+        font-size: 1.2rem;
+        font-weight: 700;
+        background: #f4f4f4 !important;
+
+        td {
+            padding: 5px 5px;
+        }
+    }
+
+    &__document {
+        padding: 3px 7px;
+    }
+
+    tr {
+        background: #F1F5FA;
+    }
+
+    tr:nth-child(odd) {
+        background: #E4ECF5;
+    }
+
+}
+
+/*==========================================*/
+/*========= ВОПРОСЫ ПО ПОСТУПЛЕНИЮ =========*/
+/*==========================================*/
+
+.questions {
+    background: rgba(228, 228, 228, 0.33);
+    padding: 125px 0;
+
+    &__title {
+        font-size: 2.467rem;
+        margin-bottom: 80px;
+    }
+
+    &__questions {
+
+        color: $primary;
+
+        li {
+            display: list-item;
+            font-size: 1.267rem;
+            font-weight: bold;
+        }
+
+        li:nth-child(even) {
+            display: block;
+            font-size: 1.133rem;
+            font-weight: 400;
+            margin: 18px 0 61px 0;
+        }
+
+    }
+
+}
+
+/*==========================================*/
+/*======= ДОКУМЕНТЫ ДЛЯ ПОСТУПЛЕНИЯ ========*/
+/*==========================================*/
+
+.doc-entrance {
+    padding: 125px 0;
+    background: rgba(228, 228, 228, 0.33);
+
+    &__last-ol {
+        margin-bottom: 20px !important;
+    }
+
+    ol {
+        margin-bottom: 81px;
+    }
+
+    li {
+        display: list-item;
+        font-size: 1.2rem;
+        line-height: 38px;
+    }
+
+    h3 {
+        font-size: 1.9rem;
+        margin-bottom: 44px;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 2.467rem;
+        margin-bottom: 80px;
+    }
+
+    &__subtitle {
+        font-size: 1.7rem !important;
+        margin-bottom: 44px;
+        text-align: center;
+    }
+
+    .line {
+        border: 1px solid #6F6B6B;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .document-process-data {
+        font-size: 1.4rem;
+        color: #FCA311;
+    }
+
+    .btn-download-document {
+        margin-top: 13px;
+        cursor: pointer;
+    }
+
+    &__contacts {
+        margin-top: 85px;
+    }
+
+    &__item-contacts {
+        font-size: 1.15rem;
+        margin-bottom: 11px;
+    }
+
+
+}
+
+.information {
+    margin-top: 85px;
+
+    &__item-contacts {
+        font-size: 1.15rem;
+        margin-bottom: 11px;
+    }
+}
+
+
+/*==========================================*/
+/*========== ДНИ ОТКРЫТЫХ ДВЕРЕЙ ===========*/
+/*==========================================*/
+
+.open-days {
+    background: rgba(224, 224, 224, 0.34);
+    padding: 142px 0;
+
+    &__about {
+        font-size: 1.7rem;
+        margin: 38px 0;
+    }
+
+    &__start {
+        font-size: 1.66rem;
+        color: #FCA311;
+        font-weight: bold;
+        margin-bottom: 100px;
+    }
+
+    &__subtitle {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    &__date {
+        margin-top: 15px;
+
+        li {
+            font-size: 1.2rem;
+            margin-bottom: 27px;
+        }
+    }
+}
+
+/*==========================================*/
+/*========== СТОИМОСТЬ ОБУЧЕНИЯ ============*/
+/*==========================================*/
+
+.cost {
+    background: rgba(224, 224, 224, 0.34);
+    padding: 100px 0 142px 0;
+
+    &__title {
+        margin-bottom: 45px;
+    }
+
+    &__titles {
+        font-size: 1.18rem;
+        font-weight: bold;
+        background: #FCA311;
+        td {
+            padding: 9px 0;
+        }
+    }
+
+    &__text {
+        font-size: 1.1rem;
+        td {
+            padding: 6px 0;
+        }
+    }
+
+    &__description {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 30px;
+    }
+}
+
+/*==========================================*/
+/*============= СПЕЦИАЛЬНОСТИ ==============*/
+/*==========================================*/
+
+.all-specialties {
+    background: rgba(224, 224, 224, 0.34);
+    padding: 100px 0 142px 0;
+
+    &__title {
+        margin-bottom: 55px;
+
+        &_second {
+            font-size: 1.8rem;
+            margin-top: 55px;
+        }
+    }
+
+    &__titles {
+        font-size: 1.18rem;
+        font-weight: bold;
+        background: #FCA311;
+
+        &_classes {
+            font-size: 1rem;
+
+            td {
+                padding: 3px 0;
+            }
+        }
+    }
+
+    .period-study {
+        padding: 6px 0;
+    }
+
+    &__item {
+        font-size: 1.1rem;
+        td {
+            padding: 3px 0;
+        }
+    }
+
+    &__more {
+        font-size: 1.15rem;
+
+        li {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__stars {
+        font-size: .9rem;
+    }
+}
+
+/*==========================================*/
+/*============== ПЛАН ПРИЕМА ===============*/
+/*==========================================*/
+
+.plan {
+    background: rgba(224, 224, 224, 0.34);
+    padding: 100px 0 142px 0;
+
+
+    &__title {
+        font-size: 2.4rem;
+        margin-bottom: 80px;
+    }
+
+    &__table {
+        margin-top: 65px;
+    }
+
+    &__titles {
+        font-size: 1.18rem;
+        font-weight: bold;
+        background: #c36d6d;
+    }
+
+    &__item {
+        font-size: 1.1rem;
+        td {
+            padding: 5px 6px;
+        }
+    }
+}
+
+/*==========================================*/
+/*========== СТАТИСТИКА НАБОРА =============*/
+/*==========================================*/
+
+.statistics {
+    background: rgba(224, 224, 224, 0.34);
+    padding: 100px 0 142px 0;
+
+
+    &__title {
+        font-size: 2.4rem;
+        margin-bottom: 75px;
+    }
+
+    #statistics_titles {
+        font-size: 1rem;
+
+        td {
+            padding: 0 4px;
+            background: rgba(252, 163, 17, .5);
+        }
+    }
+
+    &__row {
+        td {
+            padding: 3px 0;
+        }
+    }
+}
+
+
+/*==========================================*/
+/*================ COOKIE ==================*/
+/*==========================================*/
+
+.cookie {
+    padding: 90px 0 70px 0;
+    font-size: 1.2rem;
+    color: #505659;
+
+    &__title {
+        font-size: 2.4rem;
+        color: $primary !important;
+    }
+
+    &__subtitle {
+        font-size: 1.99rem;
+    }
+}
+
+.cookieinfo {
+    padding: 16px 18px !important;
+}
+
+
+/*==========================================*/
+/*============= HAMBURGER MENU =============*/
+/*==========================================*/
+
+.hamburger {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0; left: 0;
+    background: #fff;
+    overflow-y: hidden;
+    transition: 0.7s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 3%;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+
+    li {
+
+        margin: 8px 0;
+
+        a {
+            color: $primary;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.hamburger a:hover, .hamburger a:focus {
+    color: #f1f1f1;
+}
+
+.hamburger .closebtn {
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    color: $primary;
+    transition: 0.3s;
+    right: 20px;
+    font-size: 4rem;
+    z-index: 1000;
+}

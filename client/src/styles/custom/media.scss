@@ -1,0 +1,231 @@
+@media screen and (max-width: 1920px) {
+    .offer__title {
+        margin: 0 200px;
+    }
+}
+
+@media screen and (max-width: 1440px)  {
+    .offer__title {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    h3 {
+        font-size: 1.9rem;
+    }
+
+    .offer__title {
+        left: 0; right: 0;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    h3 {
+        font-size: 2.2rem;
+    }
+    nav {
+        display: none;
+    }
+    .offer__title {
+        font-size: 2.8rem;
+    }
+    .news {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .news__item {
+        margin-top: 25px;
+    }
+    .arrow {
+        max-width: 90%;
+    }
+
+    .footer .search-form .search-field {
+        width: 140px;
+    }
+
+    .main_info {
+        text-align: center;
+    }
+
+    .main_info__name {
+        font-size: 1.5rem;
+    }
+
+    .main_info__item {
+        font-size: 1rem !important;
+    }
+
+    .rector {
+        margin-top: 45px;
+    }
+    .open-days__schedule {
+        text-align: center;
+        margin-top: 45px;
+    }
+    .leaders__name, .leaders__address, .leaders__phone, .leaders__email, .leaders__img {
+        text-align: center;
+    }
+    .leaders__img {
+        margin-top: 10px;
+    }
+    #contact-with-us {
+        text-align: center;
+        margin-top: 25px;
+    }
+    .cookieinfo {
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h3 {
+        font-size: 2rem;
+    }
+    .gallery__images {
+        text-align: center;
+    }
+    .arrow {
+        max-width: 100%;
+    }
+    .footer .contact-info {
+        margin-bottom: 60px;
+    }
+    .footer .search-form .search-field {
+        width: 200px;
+    }
+    .footer .college {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    h3 {
+        font-size: 1.25rem !important;
+    }
+    h2 {
+        font-size: 1.6rem !important;
+    }
+    .offer__title {
+        font-size: 1.55rem;
+    }
+
+    .info__text {
+        font-size: 1.2rem;
+        line-height: 33px;
+    }
+    .arrow {
+        min-width: 10px;
+        min-height: 25px;
+    }
+    .footer .search-form .search-field {
+        width: 140px;
+    }
+
+    .leaders h3 {
+        font-size: 1.4rem !important;
+    }
+    .leaders__img {
+        margin-top: 35px;
+    }
+    .vacant__title, .vacant__pubdate {
+        font-size: 1.6rem ;
+    }
+    .vacant__description, .vacant__conditions {
+        font-size: 1.1rem;
+    }
+    .vacant #table__title {
+        font-size: 1.15rem !important;
+    }
+    .vacant .table__speciality {
+        font-size: 1.07rem;
+    }
+    .calls__text {
+        margin-bottom: 35px;
+    }
+    .schedule .calls__text_first {
+        margin-top: 0;
+    }
+    .contacts h2 {
+        font-size: 2rem;
+    }
+    .contacts__title {
+        font-size: 1.6rem;
+    }
+    .contacts__description {
+        font-size: 1.4rem;
+    }
+    #contact-with-us {
+        margin-top: 65px;
+        font-size: 1.45rem !important;
+        margin-bottom: 20px !important;
+    }
+    .all-specialties__titles {
+        font-size: .98rem;
+    }
+    .all-specialties__item, .all-specialties__more, #statistics_titles {
+        font-size: .95rem !important;
+    }
+    .statistics__row td {
+        padding: 0 1px;
+        font-size: 0.9rem;
+    }
+    .plan__titles td {
+        font-size: .9rem !important;
+    }
+    .plan__item td {
+        font-size: .8rem !important;
+        padding: 0;
+    }
+    .leaders__name {
+        font-size: 1.2rem;
+    }
+    .leaders__address, .leaders__email, .leaders__phone {
+        font-size: 1.08rem;
+    }
+    .main_info__name, .main_info__founder {
+        font-size: 1.1rem;
+    }
+    .contacts__title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    .contacts__description {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+    #document__titles td {
+        font-size: 0.9rem;
+    }
+    .documents__subtitle {
+        font-weight: bold;
+    }
+    .cookieinfo {
+        font-size: 13px !important;
+        padding: 6px 16px !important;
+    }
+}
+
+
+@media screen and (max-height: 450px) {
+    .hamburger {overflow-y: scroll;}
+    .hamburger a {font-size: 18px}
+    .hamburger .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+
+@media screen and (max-width: 420px) {
+    .coure_buttons li a {
+        padding: 11px 17px 12px 17px;
+    }
+    .main_schedule .input_email {
+        margin-bottom: 20px;
+    }
+}
