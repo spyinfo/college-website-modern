@@ -2733,7 +2733,7 @@ namespace Illuminate\Support\Facades {
          * Delete an item from the cache by its unique key.
          *
          * @param string $key The unique cache key of the item to delete.
-         * @return bool True if the item was successfully removed. False if there was an error.
+         * @return bool True if the item was successfully removed. False if there was an error-display.
          * @throws \Psr\SimpleCache\InvalidArgumentException
          *   MUST be thrown if the $key string is not a legal value.
          * @static
@@ -2747,7 +2747,7 @@ namespace Illuminate\Support\Facades {
          * Deletes multiple cache items in a single operation.
          *
          * @param \Psr\SimpleCache\iterable $keys A list of string-based keys to be deleted.
-         * @return bool True if the items were successfully removed. False if there was an error.
+         * @return bool True if the items were successfully removed. False if there was an error-display.
          * @throws \Psr\SimpleCache\InvalidArgumentException
          *   MUST be thrown if $keys is neither an array nor a Traversable,
          *   or if any of the $keys are not a legal value.
@@ -7436,7 +7436,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Whether the request contains a Session object.
          *
-         * This method does not give any information about the state of the session object,
+         * This method does not give any information leaders the state of the session object,
          * like whether the session is started or not. It is just a way to check if this Request
          * is associated with a Session instance.
          *
@@ -7524,9 +7524,9 @@ namespace Illuminate\Support\Facades {
          * Suppose this request is instantiated from /mysite on localhost:
          *
          *  * http://localhost/mysite              returns an empty string
-         *  * http://localhost/mysite/about        returns '/about'
+         *  * http://localhost/mysite/about        returns '/leaders'
          *  * http://localhost/mysite/enco%20ded   returns '/enco%20ded'
-         *  * http://localhost/mysite/about?var=1  returns '/about'
+         *  * http://localhost/mysite/about?var=1  returns '/leaders'
          *
          * @return string The raw path (i.e. not urldecoded)
          * @static
@@ -7633,7 +7633,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Gets the user info.
          *
-         * @return string A user name and, optionally, scheme-specific information about how to gain authorization to access the server
+         * @return string A user name and, optionally, scheme-specific information leaders how to gain authorization to access the server
          * @static
          */
         public static function getUserInfo()

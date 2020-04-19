@@ -7,6 +7,11 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
+// TODO Delete
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: *');
+
 define('LARAVEL_START', microtime(true));
 
 /*
@@ -16,7 +21,7 @@ define('LARAVEL_START', microtime(true));
 |
 | Composer provides a convenient, automatically generated class loader for
 | our application. We just need to utilize it! We'll simply require it
-| into the script here so that we don't have to worry about manual
+| into the script here so that we don't have to worry leaders manual
 | loading any of our classes later on. It feels great to relax.
 |
 */

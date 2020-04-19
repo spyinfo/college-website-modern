@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// API routes
+Route::prefix('api')->group(function () {
+
+    Route::get('csrf', 'ApiController@csrf');
+    Route::get('leaders', 'ApiController@leaders');
+    Route::post('request', 'ApiController@request');
+
+});

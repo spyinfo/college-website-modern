@@ -528,8 +528,7 @@ h3 {
     .form {
         &__field {
             width: 100%;
-            margin-bottom: 5px;
-            margin-top: 20px;
+            margin-bottom: 25px;
             @include border-radius(19px);
             border: 1px solid #14213D;
             padding: 11px 0 13px 25px;
@@ -553,6 +552,23 @@ h3 {
             border: 1px solid #e34a39;
             font-size: 0.9rem;
             padding-left: 18px;
+            color: #e34a39;
+        }
+
+        label.error[for="name"] ~ input[type="text"] {
+            border: 1px solid #e34a39;
+        }
+
+        label.error[for="phone"] ~ input[type="tel"] {
+            border: 1px solid #e34a39;
+        }
+
+        label.error[for="email"] ~ input[type="email"] {
+            border: 1px solid #e34a39;
+        }
+
+        label.error[for="text"] ~ textarea {
+            border: 1px solid #e34a39;
         }
 
         label.error {

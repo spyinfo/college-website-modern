@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const Header = () => {
     return (
@@ -6,7 +7,7 @@ const Header = () => {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-2 col-md-2 col-3">
-                        <a href="/"><img src="/img/logo.png" alt="logo" className="img-fluid"/></a>
+                        <Link to="/"><img src="/img/logo.png" alt="logo" className="img-fluid"/></Link>
                     </div>
                     <div className="col-lg-5 col-md-9 col-6 offset-lg-0">
                         <h3>
@@ -14,7 +15,7 @@ const Header = () => {
                         </h3>
                     </div>
                     <div className="col-3 col-md-1 d-lg-none">
-                        <a href="#" id="menu-bar" onClick="openNav()">
+                        <a href="#" id="menu-bar">
                             <svg className="ham hamRotate" viewBox="0 0 100 100" width="60">
                                 <path
                                     className="line top"
@@ -42,79 +43,79 @@ const Header = () => {
                 <nav>
                     <ul className="menu">
                         <li>
-                            <a href="/">Главная</a>
+                            <Link to="/">Главная</Link>
                         </li>
                         <li>
-                            <a>
+                            <span>
                                 Сведения
                                 <img src="/img/menu-down.svg" alt="dropdown"/>
-                            </a>
+                            </span>
                             <ul className="submenu">
                                 <li>
-                                    <a href="/about">Основные сведения</a>
+                                    <Link to="/about">Основные сведения</Link>
                                 </li>
                                 <li>
-                                    <a href="/document">Документы</a>
+                                    <Link to="/document">Документы</Link>
                                 </li>
                                 <li>
-                                    <a href="/education">Образование</a>
+                                    <Link to="/education">Образование</Link>
                                 </li>
                                 <li>
-                                    <a href="/leaders">Руководство</a>
+                                    <Link to="/leaders">Руководство</Link>
                                 </li>
                                 <li>
-                                    <a href="/vacant_places">Вакантные места для перевода</a>
+                                    <Link to="/vacant_places">Вакантные места для перевода</Link>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a>
+                            <span>
                                 Студенту
                                 <img src="/img/menu-down.svg" alt="dropdown"/>
-                            </a>
+                            </span>
                             <ul className="submenu">
                                 <li>
-                                    <a href="/main-schedule">Расписание занятий</a>
+                                    <Link to="/main-schedule">Расписание занятий</Link>
                                 </li>
                                 <li>
-                                    <a href="/materials">Учебные материалы</a>
+                                    <Link to="/materials">Учебные материалы</Link>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a>
+                            <span>
                                 Абитуриенту
                                 <img src="/img/menu-down.svg" alt="dropdown"/>
-                            </a>
+                            </span>
                             <ul className="submenu">
                                 <li>
-                                    <a href="/specialty">Специальности</a>
+                                    <Link to="/specialty">Специальности</Link>
                                 </li>
                                 <li>
-                                    <a href="/plan">План приема на
+                                    <Link to="/plan">План приема на
                                                     2020 - 2021
-                                                    год</a>
+                                                    год</Link>
                                 </li>
                                 <li>
-                                    <a href="/open-days">Дни открытых дверей</a>
+                                    <Link to="/open-days">Дни открытых дверей</Link>
                                 </li>
                                 <li>
-                                    <a href="/paid">Стоимость обучения</a>
+                                    <Link to="/paid">Стоимость обучения</Link>
                                 </li>
                                 <li>
-                                    <a href="/statistics">Статистика набора
-                                                          2020 - 2021</a>
+                                    <Link to="/statistics">Статистика набора
+                                                          2020 - 2021</Link>
                                 </li>
                                 <li>
-                                    <a href="/entering-documents">Документы для поступления</a>
+                                    <Link to="/entering-documents">Документы для поступления</Link>
                                 </li>
                                 <li>
-                                    <a href="/questions">Вопросы по поступлению</a>
+                                    <Link to="/questions">Вопросы по поступлению</Link>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="/contacts">Контакты</a>
+                            <Link to="/contacts">Контакты</Link>
                         </li>
                     </ul>
                 </nav>
