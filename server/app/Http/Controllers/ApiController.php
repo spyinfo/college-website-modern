@@ -2,25 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\API;
+use App\Leader;
+use App\Request as RequestUser;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
     public function csrf()
     {
-        return json_encode(csrf_token());
+        return response()->json(csrf_token());
     }
 
     public function leaders()
     {
-        $leaders = API::getLeaders();
+        $leaders = Leader::getAll();
 
-        return json_encode($leaders, JSON_UNESCAPED_UNICODE);
+        return response()->json($leaders, JSON_UNESCAPED_UNICODE);
     }
 
     public function request(Request $request)
     {
-        return response()->json([$request->all()], 200);
+        $data = $request->all();
+
+        RequestUser::createRequest($data);
+
+        return response()->json(['message' => 'Success']);
     }
 }

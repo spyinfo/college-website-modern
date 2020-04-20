@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::prefix('api')->group(function () {
 
     Route::get('csrf', 'ApiController@csrf');
+
     Route::get('leaders', 'ApiController@leaders');
     Route::post('request', 'ApiController@request');
 

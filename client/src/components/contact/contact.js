@@ -84,20 +84,13 @@ class Contact extends Component {
         const {form: {name, phone, email, text}} = this.state
 
         const data = {
-            _token: this.props.token,
             name: name.value,
             phone: phone.value,
             email: email.value,
             text: text.value
         }
 
-        const response = await axios.post(POST_REQUEST_URL, data, {
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': this.props.token,
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-        });
+        const response = await axios.post(POST_REQUEST_URL, data);
 
         console.log(response)
     }
